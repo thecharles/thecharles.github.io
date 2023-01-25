@@ -3,6 +3,39 @@
     <head>
         <title>Título da página</title>
         <link rel="stylesheet" href="estilo.css">
+        <script type="text/javascript">
+
+            function validarFormulario()
+            {
+
+                var nome = document.getElementById("nome").value;
+                var email = document.getElementById("email").value;
+                var telefone = document.getElementById("telefone").value;
+
+                if (nome == "")
+                {
+                    alert("Preencha o campo nome");
+                    return false;
+                }
+
+                if (email == "")
+                {
+                    alert("Preencha o campo e-mail");
+                    return false;
+                }
+
+                if (telefone == "")
+                {
+                    alert("Preencha o campo telefone");
+                    return false;
+                }
+
+                alert("Formulário enviado com sucesso!");
+
+                return false;
+            }
+
+        </script>
     </head>
 
     <body>
@@ -14,6 +47,17 @@
             Contato
         </h1>
         <h2>Subtitulo2</h2>
+
+        <form onsubmit="return validarFormulario()">
+
+            Nome: <input type="text" name="nome" id="nome" /><br />
+            E-mail: <input type="text" name="email" id="email" /><br />
+            Telefone: <input type="text" name="telefone" id="telefone" /><br />
+            Endereço: <input type="text" name="endereco" id="endereco"
+                maxlength="10" /><br />
+            <input type="submit" value="Enviar" />
+
+        </form>
 
     </body>
 
